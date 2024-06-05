@@ -2,7 +2,7 @@
 
 //alert("Hello")   // this will give errors as we are using node js and not browser 
 
-console.log(3+3); //In ecah and every case we should ensure that the code readability is high for our code. 
+console.log(3+3); //In each and every case we should ensure that the code readability is high for our code. 
 
 let name = "Anish"  //string dataType
 let age = 18    //integer data type
