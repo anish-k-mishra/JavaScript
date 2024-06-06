@@ -23,3 +23,12 @@ let no = 33
 let strno = String(no)  //converts number to string
 console.log(strno);
 console.log(typeof strno);
+
+let str1 = "Hello"
+let str2 = " Anish"
+console.log(str1 + str2); //concatenates both the strings
+
+console.log(1 + "2");  //because a string is present, so concatenation takes place
+console.log("1" + 2);  //because of the string concatenation takes place
+console.log("1" + 2 + 2); //string is encountered first, so all are treated as strings
+console.log(1 + 2 + "2"); //number is encountered first, so initial conversion is done followed by string concatenation
