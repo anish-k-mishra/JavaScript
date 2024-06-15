@@ -46,3 +46,26 @@ console.log(Object.entries(userapp)); //returns all the key value pair within an
 
 console.log(userapp.hasOwnProperty('isLoggedIn')); //tells weather the object contains the given property or not
 
+const course = {
+    courseName : "JavaScript in details",
+    courseInstructor : "Anish Mishra",
+    coursePrice : "Rs 1"
+}
+
+//de-Structuring the object
+const {courseInstructor : Instructor} = course // in this way we can access the courseInstructor property of the object course just by writing Instructor instead of course.courseInstructor
+console.log(Instructor);
+
+//json api format
+// {
+//     name: "ANISH",  
+//     age : "23",
+//     class: "B.Tech"
+// }
+ 
+//json api format
+[
+    {},
+    {},
+    {}
+]
