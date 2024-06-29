@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body style = "background-color: #212134; color :beige">
+    <ul class = "language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    //creating a basic function to add element in the ul tag
+    function addLang(lang){
+        const li = document.createElement('li')
+        li.innerHTML = `${lang}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLang("Python")
+    addLang("C++")
+    addLang("Java")
+    function addLangOpti(lang){ //this method is more optimised as it doesnot need to traverse thorugh the all li tags to add a new element
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lang));
+        document.querySelector('.language').appendChild(li);
+    }
+    addLangOpti("Ruby")
+    addLangOpti("TypeScript")
+
+    //Editing the values
+    const secLang = document.querySelector("li:nth-child(2)")
+    secLang.innerHTML = "goLang"; //not optimal
+
+    const newli = document.createElement('li'); //optimised(to some extent, does not matter with less no. of elements)
+    newli.textContent = "Mojo"
+    secLang.replaceWith(newli)
+
+    //remove
+    const nthLan = document.querySelector('li:nth-child(3)')
+    nthLan.remove()
+</script>
+</html>
