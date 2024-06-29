@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: rgb(36, 34, 34);
+            color: bisque;
+        }
+    </style>
+    <title>DOM | Learning</title>
+</head>
+<body>
+    <div class="container">
+        <div class="days">Monday</div>
+        <div class="days">Tuesday</div>
+        <div class="days">Wednesday</div>
+        <div class="days">Thursday</div>
+        <div class="days">Friday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.container')
+    console.log(parent);
+    console.log(parent.children); //returns all the childrens in an array like structure
+    console.log(parent.children[1]); //1st children
+    for (let i = 0; i < parent.children.length; i++) { //applying loop on array like object
+        console.log(parent.children[i].innerHTML);        
+    }
+    console.log(parent.firstElementChild);//directly returns 1st child of the parent element
+    console.log(parent.lastElementChild); //directly returns the last child of parent
+
+    const dayOne = document.querySelector('.days') //returns 1st day
+    console.log(dayOne);
+
+    console.log(dayOne.parentElement); //returns the parent element of dayOne
+    console.log(dayOne.nextElementSibling); //returns the next child of parent, i.e., the next sibling of dayOne
+    console.log(parent.childNodes); //this gives all the nodes present inside parent element (all the things written within the parent element counts in the node list also including the line breaks)
+        
+</script>
+</html>
