@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+    <style>
+        body{
+            background-color: #232121;
+            color: bisque;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<script>
+    const div = document.createElement('div');
+    div.className = 'container'
+    div.id = 'JustDiv'
+    div.setAttribute('title', 'generatedTitle' )
+    div.style.backgroundColor = "#232152"
+    div.style.color = "bisque"
+    div.style.padding = "10px"
+    //div.innerText = "Learning JS is fun!" //this method is not preferred much as it overwrites already existikng preoperty instead of creating new nodes.
+    const addText = document.createTextNode("Learning JS is fun")
+    div.appendChild(addText);
+    document.body.appendChild(div);
+    console.log(div);
+</script>
+</html>
