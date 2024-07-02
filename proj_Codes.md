@@ -74,3 +74,12 @@ form.addEventListener('submit', function(e){
   }
 })
 ```
+## JS code : Digital Clock
+```javascript
+const clock = document.querySelector('#clock');
+setInterval(function(){//this function takes a callback function and a fixed time(in ms) after which the callback function is called in reccurring way till the document is open.  
+let date = new Date();
+clock.innerHTML = `${date.toLocaleTimeString()}`
+  
+}, 1000)
+```
