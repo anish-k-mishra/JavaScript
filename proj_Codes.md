@@ -187,3 +187,58 @@ function newGame(){
   })
 }
 ```
+## JS Code : Keyboard
+```javascript
+const insert = document.querySelector('#insert');
+window.addEventListener('keydown', (e) => {
+
+  insert.innerHTML = `
+    <div class = "color">
+    <table>
+    <tr>
+      <th>Key</th>
+      <th>KeyCode</th>
+      <th>Code</th>
+    </tr>
+    <tr>
+      <td>${e.key === " " ? "space" : e.key}</td>
+      <td>${e.keyCode}</td>
+      <td>${e.code}</td>
+    </tr>
+  </table>
+    </div>
+  `
+})
+
+```
+## JS Code : Unlimited Colors
+```javascript
+//generate a random colour
+const randomColor = function(){
+  const hex = "012345678910ABCDEF";
+  let color = "#";
+  for(let i = 0; i<6; i++){
+    color += hex[Math.floor(Math.random()*16)];
+  }
+  return color;
+}
+
+
+let start;
+function changeColor(){
+  function changeBGC(){
+    document.querySelector('body').style.backgroundColor = randomColor();
+  }
+  if(start == null){
+    start = setInterval(changeBGC, 1000);
+  }
+}
+
+let noChangeColor = function(){
+  clearInterval(start);
+  start = null;
+}
+
+document.querySelector('#start').addEventListener('click', changeColor);
+document.querySelector('#stop').addEventListener('click', noChangeColor);
+```
