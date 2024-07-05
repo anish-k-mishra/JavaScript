@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>  
+<body>
+    <h1>Learning JS</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let sayMyName = function(str){
+        console.log(str, Date());
+    }
+    let print = setInterval(sayMyName , 1000, "Anish") //this function constantly excutes the function (handler) given to it after every interval of time given. We can also pass the reference to a function. Patrameters can also be passed as the 3rd argument if thwe function needs a parameter
+    let clear = clearInterval(print) // this clears the setInterval function and no function is executed 
+    let printfn 
+    document.querySelector('#start').addEventListener('click', function(){
+       printfn = setInterval(sayMyName, 2000, "Anish");
+    });
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(printfn);
+        console.log('setInterval stopped');
+    });
+</script>
+</html>
