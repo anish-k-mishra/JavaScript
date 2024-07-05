@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anish</title>
+</head>
+<body>
+    <h1>Learning ASYNC JS</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let sayMyName = function(){
+        console.log("Anish");
+    }
+    let changeName = function(){
+        document.querySelector('h1').innerHTML = "Anish Mishra";
+    }
+
+    let change = setTimeout(changeName, 5000) //this takes the time specified at last (in ms) and then executes the function (handler) within it. Holding the setTimeout api call within a variable does not stop its functionality. It still performs the same way as it would have been performed earlier. The variable is just the reference for clearTimeout
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(change);
+        console.log('Name change stopped');
+    }) // now if the stop button is clicked, the setTimeout functionality is stopped.
+</script>
+</html>
