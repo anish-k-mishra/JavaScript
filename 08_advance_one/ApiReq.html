@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Req</title>
+</head>
+<body style="background-color: black; color: bisque;">
+    <h1>API Request</h1>
+    <p>0	:: UNSENT ::  Client has been created. open() not called yet.<br>
+        1	:: OPENED	:: open() has been called. <br>
+        2	:: HEADERS_RECEIVED:: 	send() has been called, and headers and status are available. <br>
+        3	:: LOADING	:: Downloading; responseText holds partial data. <br>
+        4	:: DONE	:: The operation is complete. <br></p>
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/anish-k-mishra'
+    const xhr = new XMLHttpRequest();
+    console.log(xhr.readyState); //0 state
+    xhr.open('GET', requestURL) //after this also the request has not been sent, as stated above in body
+    console.log(xhr.readyState); //1 state
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState); //states change is shown
+        if(xhr.readyState === 4){
+            console.log(this.responseText); //as the flow reaches state 4, we get a respose from the api, we are printing that responseText
+            
+            // const data = this.responseText;
+            // console.log(data.followers); // we cannot access the properties form the response like this as the response we got is in STRING in most of the times. This will give undefined as the data variable is string (JSON String)
+            
+            //converting the JSON String from rsponse to Object, so that its properties can be accessed
+            const data = JSON.parse(this.responseText); //now the response string is converted to JSON Object, and we can directly access its properties
+            console.log(data.followers);
+
+        }
+    }
+    xhr.send(); //now called api request
+
+</script>
+</html>
