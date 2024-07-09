@@ -20,7 +20,7 @@ console.log(user.changeUsername());
 
 //Actually what is happening behind the scene
 
-function CreateUser = function(){
+function CreateUser(){
     this.username = username;
     this.password = password;
     this.email = email;
